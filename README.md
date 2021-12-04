@@ -11,7 +11,7 @@
 SharedPreferencesを使用して，EditTextに入力した値を保存してみよう！
 
 #### Hint 1-1
-Mozerのデータ保存（ローカル）を参考にしよう．
+"SharedPreferences Kotlin"で検索してみよう！
 
 #### Hint 1-2
 保存したい文字列をSharedPreferencesに渡すときはこのようなコードを書くよ．
@@ -36,7 +36,7 @@ data class User()
 ```
 
 #### Hint 2-1
-Mozerのデータベース（Realm）を参考にしよう．
+"data class Kotlin"で検索してみよう！
 
 #### Hint 2-2
 データをまとめて管理するクラスを作成するときはこのようなコードを書くよ．
@@ -52,4 +52,41 @@ data class User(
 )
 ```
 
-### Step3：EditTextに入力した値をまとめて保存しよう！
+### Step3：Userクラスをインスタンス化しよう！
+EditTextに入力した文字列を引数に渡して，Userクラスをインスタンス化しよう！
+
+#### Hint 3-1
+"クラス　インスタンス化　Kotlin"で検索してみよう！
+
+#### Hint 3-2
+クラスをインスタンス化するときはこのようなコードを書くよ．
+```
+val user = User(引数1, 引数2, 引数3)
+```
+
+### Step4：EditTextに入力した値をまとめて保存しよう！
+Step3で作成したUserクラスのインスタンスを保存してみよう！
+
+このとき，Userクラスを文字列に変換する必要があるよ．
+
+以下のコードを参考にしてみよう！
+```
+editor.putString(USER, Json.encodeToString(保存したいUserクラスのインスタンス))
+```
+
+### Step5：保存した値を表示しよう！
+Step4で保存した値を表示してみよう！
+
+このとき，文字列に変換したUserクラスのインスタンスをUser型に戻す必要があるよ．
+
+以下のコードを参考にしてみよう！
+```
+// デフォルトのUserを作成
+val defaultUser = User("名前", "コース", "チェックワーク最高")
+// 保存したUserの文字列を取得
+val userString = sharedPref.getString(USER, Json.encodeToString(defaultUser))
+// Userの文字列をUser型に戻す．
+val user = if (userString != null) Json.decodeFromString(userString) else defaultUser
+```
+
+これで変数userに保存した値が代入されたので，あとはそれらの値を表示するだけだ！
