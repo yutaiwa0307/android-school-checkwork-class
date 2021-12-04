@@ -25,18 +25,22 @@ class MainActivity : AppCompatActivity() {
 
         // save_buttonを押したときの処理
         binding.saveButton.setOnClickListener {
-            // EditTextに入力した内容を保存する．
+            // SharedPreferences.Editorを取得する．
             val editor = sharedPref.edit()
-            editor.putString(NAME, binding.nameEditText.text.toString())
-            editor.putString(COURSE, binding.courseEditText.text.toString())
-            editor.putString(COMMENT, binding.commentEditText.text.toString())
+
+            // Step1：EditTextに入力した値をEditorに渡す．
+
+
+            // 渡した値を保存する．
             editor.apply()
         }
     }
 
     companion object {
+        // データを保存するときに用いるKey
         private const val NAME = "name"
         private const val COURSE = "course"
         private const val COMMENT = "comment"
+        private const val USER = "user"
     }
 }
