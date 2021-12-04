@@ -29,7 +29,9 @@ class MainActivity : AppCompatActivity() {
             val editor = sharedPref.edit()
 
             // Step1：EditTextに入力した値をEditorに渡す．
-
+            editor.putString(NAME, binding.nameEditText.text.toString())
+            editor.putString(COURSE, binding.courseEditText.text.toString())
+            editor.putString(COMMENT, binding.commentEditText.text.toString())
 
             // 渡した値を保存する．
             editor.apply()
