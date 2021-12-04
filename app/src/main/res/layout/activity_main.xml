@@ -31,16 +31,18 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_weight="0.5"
+                    android:fontFamily="sans-serif-black"
                     android:padding="8dp"
                     android:text="名前"
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/cource_text"
+                    android:id="@+id/course_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_weight="0.5"
+                    android:fontFamily="sans-serif-black"
                     android:padding="8dp"
                     android:text="コース"
                     android:textSize="16sp" />
@@ -52,6 +54,7 @@
                 android:layout_height="0dp"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
+                android:fontFamily="sans-serif-black"
                 android:padding="8dp"
                 android:text="チェックワーク最高！"
                 android:textSize="16sp" />
@@ -99,7 +102,7 @@
                     android:layout_weight="0.5">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/cource_edit_text"
+                        android:id="@+id/course_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="コース" />
