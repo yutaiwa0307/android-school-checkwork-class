@@ -4,9 +4,9 @@
 - EditTextに入力した文字列を保存できる．
 - アプリを起動したとき，保存した文字列がTextViewに表示される．
 
+![checkwork_class](https://user-images.githubusercontent.com/49048577/144717724-5c698e20-e04b-4821-865d-bae86dd10e6e.png)
 
-
-## 問題
+## 手順
 ### Step1：EditTextに入力した値を保存しよう！
 SharedPreferencesを使用して，EditTextに入力した値を保存してみよう！
 
