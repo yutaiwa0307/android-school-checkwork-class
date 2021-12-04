@@ -10,10 +10,10 @@
 ### Step1：EditTextに入力した値を保存しよう！
 SharedPreferencesを使用して，EditTextに入力した値を保存してみよう！
 
-#### Hint 1-1
+#### 🚨Hint 1-1🚨
 "SharedPreferences Kotlin"で検索してみよう！
 
-#### Hint 1-2
+#### 🚨Hint 1-2🚨
 保存したい文字列をSharedPreferencesに渡すときはこのようなコードを書くよ．
 ```
 editor.putString(値を取り出すときに必要な鍵（文字列）, 保存したい文字列)
@@ -35,16 +35,16 @@ Userクラスに必要な値は以下の通りだよ．
 data class User()
 ```
 
-#### Hint 2-1
+#### 🚨Hint 2-1🚨
 "data class Kotlin"で検索してみよう！
 
-#### Hint 2-2
+#### 🚨Hint 2-2🚨
 データをまとめて管理するクラスを作成するときはこのようなコードを書くよ．
 ```
 data class User()
 ```
 
-#### Hint 2-3
+#### 🚨Hint 2-3🚨
 Userクラスに必要な値はこのように用意していくよ．
 ```
 data class User(
@@ -55,10 +55,10 @@ data class User(
 ### Step3：Userクラスをインスタンス化しよう！
 EditTextに入力した文字列を引数に渡して，Userクラスをインスタンス化しよう！
 
-#### Hint 3-1
+#### 🚨Hint 3-1🚨
 "クラス　インスタンス化　Kotlin"で検索してみよう！
 
-#### Hint 3-2
+#### 🚨Hint 3-2🚨
 クラスをインスタンス化するときはこのようなコードを書くよ．
 ```
 val user = User(引数1, 引数2, 引数3)
