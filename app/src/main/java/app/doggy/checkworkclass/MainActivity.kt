@@ -21,13 +21,17 @@ class MainActivity : AppCompatActivity() {
         // SharedPreferencesのインスタンスを取得
         val sharedPref: SharedPreferences = getSharedPreferences("sharedPref", Context.MODE_PRIVATE)
 
-        // 保存した内容を表示する．
+        // デフォルトのUserを作成
+        val defaultUser = User("名前", "コース", "チェックワーク最高")
+        // 保存したUserの文字列を取得
+        val userString = sharedPref.getString(USER, Json.encodeToString(defaultUser))
+        // Userの文字列をUser型に戻す．
+        val user = if (userString != null) Json.decodeFromString(userString) else defaultUser
+
+        // 保存した内容を表示
 //        binding.nameText.text = sharedPref.getString(NAME, "名前")
 //        binding.courseText.text = sharedPref.getString(COURSE, "コース")
 //        binding.commentText.text = sharedPref.getString(COMMENT, "チェックワーク最高！")
-        val defaultUser = User("名前", "コース", "チェックワーク最高")
-        val userString = sharedPref.getString(USER, Json.encodeToString(defaultUser)) as String
-        val user = Json.decodeFromString<User>(userString)
         binding.nameText.text = user.name
         binding.courseText.text = user.course
         binding.commentText.text = user.comment
@@ -48,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             )
             editor.putString(USER, Json.encodeToString(user))
 
-            // 渡した値を保存する．
+            // 渡した値を保存
             editor.apply()
         }
     }
